@@ -1,0 +1,28 @@
+{
+  "name": "typescript_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc -w",
+    "start": "node ./dist/program.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mongoose": "^5.11.97",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "http-status": "^1.6.2",
+    "mongoose": "^6.9.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/http-status": "^1.1.2",
+    "@types/node": "^18.13.0"
+  }
+}
