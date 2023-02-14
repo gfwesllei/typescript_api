@@ -22,7 +22,7 @@ class NewsController {
 
         let newsVO = req.body;
         newsService.create(newsVO)
-            .then(news => helpers.sendResponse(res, HttpStatus.CREATED, `News ${news._id} created with success!`))
+            .then(news => helpers.sendResponse(res, HttpStatus.CREATED, news))
             .catch(error => console.error.bind(console, `Error ${error}`))
 
     }

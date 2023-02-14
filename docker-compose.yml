@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - 27017:27017
+  ts_api:
+    image: 'node:alpine'
+    build: .
+    environment:
+      - MONGO_USERNAME=mongoadmin
+      - MONGO_PASS=secret
+      - MONGO_HOST=mongo
+    ports:
+      - 8001:3050
+    depends_on:
+      - mongo
