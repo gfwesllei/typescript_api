@@ -1,8 +1,8 @@
 import * as mongoose from 'mongoose';
 
 class DataBase {
-    
-    private DB_URL = 'mongodb://mongoadmin:secret@mongo:27017/new_db?connectTimeoutMS=1000&authSource=admin';
+
+    private DB_URL = 'mongodb://mongoadmin:secret@mongo-db/new_db?connectTimeoutMS=1000&authSource=admin';
 
     createConnection() {
         mongoose.connect(this.DB_URL)

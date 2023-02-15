@@ -1,15 +1,8 @@
 version: '3'
 services:
-  mongo:
-    image: mongo
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=secret
-    ports:
-      - 27017:27017
   ts_api:
     links:
-      - mongo
+      - mongo-db
     image: 'gfwesllei/ts_api'
     build: .
     environment:
@@ -19,4 +12,11 @@ services:
     ports:
       - 80:3050
     depends_on:
-      - mongo
+      - mongo-db
+  mongo-db:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=secret
+    ports:
+      - 27017:27017
