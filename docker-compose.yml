@@ -8,6 +8,8 @@ services:
     ports:
       - 27017:27017
   ts_api:
+    links:
+      - mongo
     image: 'gfwesllei/ts_api'
     build: .
     environment:
