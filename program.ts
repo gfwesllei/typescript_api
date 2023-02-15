@@ -1,4 +1,7 @@
 import StartUp from './startUp';
+import * as dotenv from 'dotenv'
+dotenv.config()
+console.log(process.env)
 
 let port = process.env.PORT || '3050'
 

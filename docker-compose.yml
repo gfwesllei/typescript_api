@@ -11,8 +11,6 @@ services:
       - MONGO_HOST=mongo
     ports:
       - 80:3050
-    depends_on:
-      - mongo-db
   mongo-db:
     image: mongo
     environment:
